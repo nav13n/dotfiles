@@ -1,7 +1,8 @@
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    l = log --pretty=custom
+    lg = log --graph --pretty=custom
 
 	# View the current working tree status using the short format
 	s = status -s
@@ -98,7 +99,11 @@
 
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
-	precomposeunicode = false
+    precomposeunicode = false
+    editor = vim
+    autocrlf = input
+    abbrev = 12
+
 
 [color]
 
@@ -117,7 +122,10 @@
 	meta = yellow bold
 	frag = magenta bold # line info
 	old = red # deletions
-	new = green # additions
+    new = green # additions
+
+    newMoved = cyan
+    oldMoved = blue
 
 [color "status"]
 
@@ -136,7 +144,8 @@
 	renames = copies
 	# Enable an experimental heuristic that shifts the hunk boundary in an
 	# attempt to make the resulting patch easier to read.
-	indentHeuristic = true
+    indentHeuristic = true
+    colorMoved = zebra
 
 [diff "bin"]
 
@@ -163,6 +172,15 @@
 	followTags = true
 
 # URL shorthands
+[pretty]
+
+    custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)"
+    #                     │        │            │            │             └─ author name
+    #                     │        │            │            └─ message
+    #                     │        │            └─ date (relative)
+    #                     │        └─ decorations (branch, heads or tags)
+    #                     └─ hash (abbreviated)
+
 
 [url "git@github.com:"]
 
