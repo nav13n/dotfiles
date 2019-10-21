@@ -136,7 +136,7 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+	gpgsign = false
 
 [diff]
 
@@ -203,6 +203,8 @@
 	insteadOf = "gist:"
 
 [user]
+	email = naveen2.pandey@ril.com
+	name = Naveen Pandey
 
     # Don't guess the user's identity.
     # https://github.com/git/git/blob/90f7b16b3adc78d4bbabbd426fb69aa78c714f71/Documentation/config.txt#L2847-L2855
@@ -219,3 +221,5 @@
     #     by the local ones
 
     path = ~/.gitconfig.local
+[gpg]
+	program = gpg

@@ -28,6 +28,12 @@ alias clear-dns-cache="sudo dscacheutil -flushcache; \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Dockers
+alias docker-clean-unused='docker system prune --all --force --volumes'
+alias docker-clean-all='docker stop $(docker container ls -a -q) && docker system prune -a -f --volumes'
+
+
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Empty the trash, the main HDD and on all mounted volumes,
 # and clear Apple’s system logs to improve shell startup speed.
 
@@ -203,3 +209,4 @@ alias reload="exec $SHELL -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+alias go100='sshpass -p A\!\$erver88 ssh root@10.131.55.100'
